@@ -9,25 +9,50 @@
   text-align: center;
 }
 
-table{ width:50%;
+.ListItem:hover {
+  background-color: #a5bae1;
+}
+
+table{
+  width:60% !important;
   height:50%;
-  margin-left: 25%;
-  padding:0;
+  margin-left:19%;
+  margin-top: 3%;
   font-size: 20px;
-  border-collapse: collapse;
-  background: burlywood;
   table-layout: fixed;
 ;}
 
-td, th {
+td, th, tr {
   padding: 3px;
   border:1px solid black;
 }
 
-form {
-  margin-top: 20px;
-  margin-left: 40%;
-  padding-bottom: 5px;
+.user_ws {
+  position: static;
+  margin-left: 20%;
+  margin-top: 0;
+}
+
+.chat_ws {
+  width: 20%;
+  margin-left: 1%;
+  float: left;
+  text-align: center;
+}
+
+.GridMessages {
+  margin-left: 2.5%;
+}
+
+.buttonForm {
+  background-color: #646486 !important;
+  color: white !important;
+  height: 30px;
+  width: 10% !important;
+}
+
+.GridButton {
+  margin-top: 1% !important;
 }
 
 .App-logo {
@@ -63,4 +88,12 @@ form {
   to {
     transform: rotate(360deg);
   }
+}
+
+.inputClass {
+  margin-bottom: 5%;
+}
+
+.ChatListClass {
+  background-color: #c4ddec !important;
 }
