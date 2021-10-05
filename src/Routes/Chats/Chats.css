@@ -1,0 +1,99 @@
+.App {
+  background-color: burlywood;
+  border: 1px solid black;
+}
+.Message {
+  border:1px solid black;
+  background-color: darkgreen;
+  margin: 5%;
+  text-align: center;
+}
+
+.ListItem:hover {
+  background-color: #a5bae1 !important;
+}
+
+table{
+  width:60% !important;
+  height:50%;
+  margin-left:19%;
+  margin-top: 3%;
+  font-size: 20px;
+  table-layout: fixed;
+;}
+
+td, th, tr {
+  padding: 3px;
+  border:1px solid black;
+}
+
+.user_ws {
+  position: static;
+  margin-left: 20%;
+  margin-top: 0;
+}
+
+.chat_ws {
+  width: 20%;
+  margin-left: 6%;
+  float: left;
+  text-align: center;
+}
+
+.GridMessages {
+  margin-left: 2.5%;
+}
+
+.buttonForm {
+  background-color: #646486 !important;
+  color: white !important;
+  height: 30px;
+  width: 10% !important;
+}
+
+.GridButton {
+  margin-top: 1% !important;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.inputClass {
+  margin-bottom: 5%;
+}
+
+nav {
+  padding-bottom: 0 !important;
+}
