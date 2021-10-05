@@ -10,7 +10,7 @@
 }
 
 .ListItem:hover {
-  background-color: #a5bae1;
+  background-color: #a5bae1 !important;
 }
 
 table{
@@ -35,7 +35,7 @@ td, th, tr {
 
 .chat_ws {
   width: 20%;
-  margin-left: 1%;
+  margin-left: 6%;
   float: left;
   text-align: center;
 }
@@ -94,6 +94,6 @@ td, th, tr {
   margin-bottom: 5%;
 }
 
-.ChatListClass {
-  background-color: #c4ddec !important;
+nav {
+  padding-bottom: 0 !important;
 }
