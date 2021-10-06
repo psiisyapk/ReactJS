@@ -6,32 +6,39 @@ import Home from "./Routes/Home";
 import NoChat from "./Routes/NoChat";
 import React from "react";
 import {AppBar, Box, CssBaseline, Divider, Drawer, Toolbar} from "@material-ui/core";
+import { Provider } from "react-redux";
+import {createStore} from "redux";
+import {ProfileReducer} from "./store/reducer";
+
+const store = createStore(ProfileReducer);
 
 function App() {
     return (
-        <BrowserRouter>
-            <Header/>
-            <Switch>
-                <Route path="/profile">
-                    <Profile />
-                </Route>
-                <Route exact path="/chats">
-                    <Chats />
-                </Route>
-                <Route path="/chats/:chatId">
-                    <Chats />
-                </Route>
-                <Route exact path="/">
-                    <Home />
-                </Route>
-                <Route path="/nochat">
-                    <NoChat />
-                </Route>
-                <Route>
-                    <h3 style={{ marginLeft: 100 }}>Page not found</h3>
-                </Route>
-            </Switch>
-        </BrowserRouter>
+        <Provider store={store}>
+            <BrowserRouter>
+                <Header/>
+                <Switch>
+                    <Route path="/profile">
+                        <Profile />
+                    </Route>
+                    <Route exact path="/chats">
+                        <Chats />
+                    </Route>
+                    <Route path="/chats/:chatId">
+                        <Chats />
+                    </Route>
+                    <Route exact path="/">
+                        <Home />
+                    </Route>
+                    <Route path="/nochat">
+                        <NoChat />
+                    </Route>
+                    <Route>
+                        <h3 style={{ marginLeft: 100 }}>Page not found</h3>
+                    </Route>
+                </Switch>
+            </BrowserRouter>
+        </Provider>
     );
 }
 
