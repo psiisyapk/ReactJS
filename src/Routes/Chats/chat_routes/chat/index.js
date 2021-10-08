@@ -6,6 +6,7 @@ function ChatMessages({chatId, chats}) {
     if (!chats[chatId]) {
         return <Redirect to="/nochat" />;
     } else {
+        console.log(chats);
         return (
             <div style={{ height: 800, width: '95%' }} className="GridMessages">
                 <DataGrid
