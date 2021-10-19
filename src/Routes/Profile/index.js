@@ -1,8 +1,8 @@
 import {useDispatch, useSelector} from "react-redux";
-import {ShowUser} from "../../store/actions";
 import React, {useCallback} from "react";
 import {Checkbox, FormControlLabel, FormGroup} from "@material-ui/core";
-import {getProfile} from "../../store/selectors";
+import {getProfile} from "../../store/Profile/selector";
+import {ShowUser} from "../../store/Profile/actions";
 
 function Profile() {
     const profile = useSelector(getProfile);

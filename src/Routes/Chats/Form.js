@@ -1,12 +1,17 @@
 import {Button, Card, CardContent, FormControl, Grid, TextField} from "@mui/material";
-import React, {useEffect, useRef, useState} from "react";
-import {useDispatch} from "react-redux";
-import {SendMessage} from "../../store/actions";
+import React, {useCallback, useEffect, useRef} from "react";
+import {useDispatch, useSelector} from "react-redux";
+import {SendMessage} from "../../store/Messages/actions";
+import {getChats} from "../../store/Chats/selector";
+import {addMessageWithThunk} from "../../Components/Middleware";
 
-export function Form({chats, chatId}) {
-    const [submitForm, ChangeState] = useState(false)
+export function Form({chatId}) {
+    const chats = useSelector(getChats);
     const inputRef = useRef(null);
     const dispatch = useDispatch();
+    const onAddMessage = useCallback(() => {
+        dispatch(addMessageWithThunk(chatId));
+    }, [chatId, dispatch]);
 
     useEffect( () => {
         if (chats[chatId]) {
@@ -14,23 +19,13 @@ export function Form({chats, chatId}) {
         }
     }, [chats, chatId]);
 
-    useEffect(() => {
-        const intervalId = setTimeout(() => {
-            if (submitForm === true) {
-                dispatch(SendMessage(chatId, "robot", "Ваше сообщение принято"))
-                ChangeState(false);
-                inputRef.current.focus();
-            }
-        }, 1500)
-        return () => clearInterval(intervalId);
-    }, [submitForm, chats, chatId, dispatch]);
-
     function handleSubmit(event) {
         event.preventDefault();
         let inputText = event.target[0].value
         if (inputText !== '') {
             dispatch(SendMessage(chatId, "human", inputText))
-            ChangeState(true);
+            onAddMessage();
+            inputRef.current.focus();
         }
     }
 

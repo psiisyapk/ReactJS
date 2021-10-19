@@ -2,10 +2,12 @@ import {Button, List, ListItem, ListItemText, ListSubheader} from "@mui/material
 import {Checkbox, Divider} from "@material-ui/core";
 import {NavLink} from "react-router-dom";
 import React, {useState} from "react";
-import {AddChat, DeleteChat} from "../../store/actions";
-import {useDispatch} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
+import {AddChat, DeleteChat} from "../../store/Chats/actions";
+import {getChats} from "../../store/Chats/selector";
 
-export function ChatList({chats, chatId}) {
+export function ChatList({chatId}) {
+    const chats = useSelector(getChats);
     const dispatch = useDispatch();
     const [Checked, SetChecked] = useState({"chatId": null, "is_checked": false})
 
@@ -45,7 +47,7 @@ export function ChatList({chats, chatId}) {
             <Button variant="text" onClick={addChat}>Add</Button>
             <Button variant="text" onClick={deleteChat}>Delete</Button>
             <Divider />
-            {Object.keys(chats).map((id) =>
+            {chats.map((id) =>
                 <ListItem key={id} className="ListItem"
                           style={{ backgroundColor: id === chatId ? "#bcd8e1" : "transparent"}} divider={true}>
                     <Checkbox
@@ -53,7 +55,7 @@ export function ChatList({chats, chatId}) {
                         checked={id === Checked.chatId ? Checked.is_checked : false}
                     />
                     <NavLink to={`/chats/${id}`} style={{ textDecoration: 'none' }}>
-                        <ListItemText primary={`${chats[id].name}`} />
+                        <ListItemText primary={`Chat ${id}`} />
                     </NavLink>
                 </ListItem>
             )}

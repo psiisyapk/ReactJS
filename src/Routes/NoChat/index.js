@@ -4,7 +4,7 @@ import React from "react";
 export const NoChat = () => (
     <>
         <Chats />
-        <span>Please select a chat</span>
+        <span style={{marginLeft: 150}}>Please select a chat</span>
     </>
 )
 
