@@ -3,7 +3,7 @@ import React, {useCallback, useEffect, useRef} from "react";
 import {useDispatch, useSelector} from "react-redux";
 import {SendMessage} from "../../store/Messages/actions";
 import {getChats} from "../../store/Chats/selector";
-import {addMessageWithThunk} from "../../Components/Middleware";
+import {addMessageWithThunk} from "../../store/Chats/Middleware";
 
 export function Form({chatId}) {
     const chats = useSelector(getChats);

@@ -62,6 +62,15 @@ export function Header () {
                         >
                             <NavLink to="/chats" style={{ textDecoration: 'none' }}>Chats</NavLink>
                         </ListItemButton>
+                        <ListItemButton
+                            selected={selectedIndex === 4 || window.location.pathname.startsWith('/media')}
+                            className="ListItemButtonClass"
+                            style={{ backgroundColor: selectedIndex === 4 ||
+                                window.location.pathname.startsWith('/media') ? "lightblue" : "transparent"}}
+                            onClick={() => handleListItemClick(4)}
+                        >
+                            <NavLink to="/media" style={{ textDecoration: 'none' }}>Show Media</NavLink>
+                        </ListItemButton>
                     </List>
                 </header>
             </Drawer>

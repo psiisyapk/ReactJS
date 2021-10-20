@@ -1,4 +1,4 @@
-import {SendMessage} from "../store/Messages/actions";
+import {SendMessage} from "../Messages/actions";
 
 export const addMessageWithThunk = (chatId) => dispatch => {
     const author = "robot";
