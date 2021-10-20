@@ -11,3 +11,10 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+a {
+  color: #000000;
+}
+.ListItemButtonClass:hover {
+  background-color: #22618d !important;
+}
